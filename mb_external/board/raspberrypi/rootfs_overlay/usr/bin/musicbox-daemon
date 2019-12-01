@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+while true; do
+    playmusic /root
+done
