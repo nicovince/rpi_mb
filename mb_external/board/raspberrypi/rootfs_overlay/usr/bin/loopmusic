@@ -1,0 +1,8 @@
+#!/bin/sh
+SEARCH_PATH="$1"
+
+SONG=$(find ${SEARCH_PATH} -iname "*mp3" | shuf | head -n 1)
+while true; do
+    mpg123 "${SONG}"
+done
+
