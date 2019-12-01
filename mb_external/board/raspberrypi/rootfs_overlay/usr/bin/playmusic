@@ -1,0 +1,9 @@
+#!/bin/sh
+
+SEARCH_PATH="$1"
+
+find $SEARCH_PATH -iname "*mp3" | shuf | while read song
+do
+    mpg123 "$song"
+done
+
