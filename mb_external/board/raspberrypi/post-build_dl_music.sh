@@ -23,3 +23,6 @@ if [ ! -f "${FILE}" ]; then
     URL="https://www.youtube.com/watch?v=PDJqRR1X1QU"
     youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
 fi
+
+cd ${MUSIC_DIR}
+replaygain *
