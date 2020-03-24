@@ -33,8 +33,8 @@ if [ ! -f "${FILE}" ]; then
     ffmpeg -i "${FILE}" -ss 00:00:04.00 -t 00:07:00.00 -c copy "tmp.mp3"
     rm "${FILE}"
     mv tmp.mp3 "${FILE}"
-    create_script "${FILE}" 20 "${SCRIPT}"
 fi
+create_script "${FILE}" 18 "${SCRIPT}"
 
 
 FILENAME="Une Libellule"
@@ -46,8 +46,8 @@ if [ ! -f "${FILE}" ]; then
     ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:15.00 -c copy "tmp.mp3"
     rm "${FILE}"
     mv tmp.mp3 "${FILE}"
-    create_script "${FILE}" 17 "${SCRIPT}"
 fi
+create_script "${FILE}" 16 "${SCRIPT}"
 
 # Berceuse de Brahms
 FILENAME="Brahms - Berceuse"
@@ -56,8 +56,8 @@ SCRIPT="${FILENAME}.sh"
 if [ ! -f "${FILE}" ]; then
     URL="https://www.youtube.com/watch?v=PDJqRR1X1QU"
     youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
-    create_script "${FILE}" 20 "${SCRIPT}"
 fi
+create_script "${FILE}" 20 "${SCRIPT}"
 
 cd ${MUSIC_DIR}
 replaygain *

@@ -1,0 +1,18 @@
+
+#!/bin/sh
+
+DAEMON=wait_and_shutdown
+DAEMON_ARGS=60m
+PID_FILE=/var/run/${DAEMON}.pid
+
+case "${1}" in
+    start)
+        start-stop-daemon -S -b -m -p ${PID_FILE} ${DAEMON} -- ${DAEMON_ARGS}
+        ;;
+    stop)
+        start-stop-daemon --stop --remove-pidfile --pidfile ${PID_FILE}
+        ;;
+    *)
+        exit 1
+        ;;
+esac
