@@ -9,7 +9,7 @@ To create the toolchain necessary to build raspberry pi image, execute :
 
 ## dependencies
 ### ubuntu package:
-`python-rgain ffmpeg`
+`ffmpeg`
 
 ### Other dependencies
 youtube-dl

@@ -59,5 +59,15 @@ if [ ! -f "${FILE}" ]; then
 fi
 create_script "${FILE}" 20 "${SCRIPT}"
 
-cd ${MUSIC_DIR}
-replaygain *
+# Flies
+FILENAME="Mozart - Flies"
+FILE="${FILENAME}.mp3"
+SCRIPT="${FILENAME}.sh"
+if [ ! -f "${FILE}" ]; then
+    URL="https://www.youtube.com/watch?v=NCb8w56fYrw"
+    youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+    ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:11.00 -c copy "tmp.mp3"
+    rm "${FILE}"
+    mv tmp.mp3 "${FILE}"
+fi
+create_script "${FILE}" 18 "${SCRIPT}"
