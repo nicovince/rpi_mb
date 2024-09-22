@@ -37,17 +37,17 @@ fi
 create_script "${FILE}" 18 "${SCRIPT}"
 
 
-FILENAME="Une Libellule"
-FILE="${FILENAME}.mp3"
-SCRIPT="${FILENAME}.sh"
-if [ ! -f "${FILE}" ]; then
-    URL="https://www.youtube.com/watch?v=3tJR-JIMaMo"
-    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
-    ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:15.00 -c copy "tmp.mp3"
-    rm "${FILE}"
-    mv tmp.mp3 "${FILE}"
-fi
-create_script "${FILE}" 16 "${SCRIPT}"
+#FILENAME="Une Libellule"
+#FILE="${FILENAME}.mp3"
+#SCRIPT="${FILENAME}.sh"
+#if [ ! -f "${FILE}" ]; then
+#    URL="https://www.youtube.com/watch?v=3tJR-JIMaMo"
+#    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+#    ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:15.00 -c copy "tmp.mp3"
+#    rm "${FILE}"
+#    mv tmp.mp3 "${FILE}"
+#fi
+#create_script "${FILE}" 16 "${SCRIPT}"
 
 # Berceuse de Brahms
 FILENAME="Brahms - Berceuse"
@@ -71,3 +71,16 @@ if [ ! -f "${FILE}" ]; then
     mv tmp.mp3 "${FILE}"
 fi
 create_script "${FILE}" 18 "${SCRIPT}"
+
+# La berceuse
+FILENAME="La Berceuse - Frozen 2"
+FILE="${FILENAME}.mp3"
+SCRIPT="${FILENAME}.sh"
+if [ ! -f "${FILE}" ]; then
+    URL="https://www.youtube.com/watch?v=0mddmgbXcBU"
+    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+    ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:11.00 -c copy "tmp.mp3"
+    rm "${FILE}"
+    mv tmp.mp3 "${FILE}"
+fi
+create_script "${FILE}" 16 "${SCRIPT}"
