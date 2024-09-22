@@ -12,10 +12,9 @@ To create the toolchain necessary to build raspberry pi image, execute :
 `ffmpeg`
 
 ### Other dependencies
-youtube-dl
+[yt-dlp](https://github.com/yt-dlp/yt-dlp)
 ```
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
+pip install yt-dlp
 ```
 
 ## Raspberry pi image

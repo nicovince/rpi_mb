@@ -1,5 +1,5 @@
 #!/bin/bash -e
-
+YT_DL="yt-dlp"
 MUSIC_DIR=${TARGET_DIR}/media/music
 mkdir -p "${MUSIC_DIR}"
 cd "${MUSIC_DIR}"
@@ -18,7 +18,7 @@ create_script()
 #FILE="${FILENAME}.mp3"
 #if [ ! -f "${FILE}" ]; then
 #    URL="https://www.youtube.com/watch?v=Yaxu4qEXDJs"
-#    youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+#    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
 #    ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:05:10.00 -c copy "tmp.mp3"
 #    rm "${FILE}"
 #    mv tmp.mp3 "${FILE}"
@@ -29,7 +29,7 @@ FILE="${FILENAME}.mp3"
 SCRIPT="${FILENAME}.sh"
 if [ ! -f "${FILE}" ]; then
     URL="https://www.youtube.com/watch?v=sbTVZMJ9Z2I"
-    youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
     ffmpeg -i "${FILE}" -ss 00:00:04.00 -t 00:07:00.00 -c copy "tmp.mp3"
     rm "${FILE}"
     mv tmp.mp3 "${FILE}"
@@ -42,7 +42,7 @@ FILE="${FILENAME}.mp3"
 SCRIPT="${FILENAME}.sh"
 if [ ! -f "${FILE}" ]; then
     URL="https://www.youtube.com/watch?v=3tJR-JIMaMo"
-    youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
     ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:15.00 -c copy "tmp.mp3"
     rm "${FILE}"
     mv tmp.mp3 "${FILE}"
@@ -55,7 +55,7 @@ FILE="${FILENAME}.mp3"
 SCRIPT="${FILENAME}.sh"
 if [ ! -f "${FILE}" ]; then
     URL="https://www.youtube.com/watch?v=PDJqRR1X1QU"
-    youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
 fi
 create_script "${FILE}" 20 "${SCRIPT}"
 
@@ -65,7 +65,7 @@ FILE="${FILENAME}.mp3"
 SCRIPT="${FILENAME}.sh"
 if [ ! -f "${FILE}" ]; then
     URL="https://www.youtube.com/watch?v=NCb8w56fYrw"
-    youtube-dl -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
+    ${YT_DL} -x --audio-format mp3 "${URL}" --exec "mv {} \"${FILE}\""
     ffmpeg -i "${FILE}" -ss 00:00:00.00 -t 00:02:11.00 -c copy "tmp.mp3"
     rm "${FILE}"
     mv tmp.mp3 "${FILE}"

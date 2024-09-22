@@ -14,4 +14,3 @@ cd ${TOOLCHAIN_DIR}
 tar xzf ${TOOLCHAIN_TARBALL}
 cd ${TOOLCHAIN_TARBALL%.tar.gz}
 ./relocate-sdk.sh
-
